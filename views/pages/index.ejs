@@ -1,0 +1,14 @@
+<div ng-controller="NavCtrl">
+  <ol class="breadcrumb">
+    <li>Project: Leviathan</li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li ng-hide="currentUser"><a href="#" ng-click="showLogin()">Sign In</a></li>
+    <li ng-hide="currentUser"><a href="#" ng-click="showSignUp()">Sign Up</a></li>
+    <li ng-show="currentUser"><a href="#" ng-click="logout()">Log Out</a></li>
+    <li ng-show="currentUser"><a href="/weightroom">The Weight Room</a></li>
+    <li ng-show="currentUser"><a href="/whiteboard">Your White Board</a></li>
+  </ol>
+</div>
+
+<ng-view></ng-view>

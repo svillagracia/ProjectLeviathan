@@ -1,0 +1,11 @@
+<div id="loader" ng-if="$root.loading">
+  <i class="fa fa-spin fa-spinner fa-5x"></i>
+</div>
+
+<h1>Weight Room: News</h1>
+
+<ul>
+  <li ng-repeat="article in articles">
+    {{article.data.title}} - {{article.data.domain}}
+  </li>
+</ul>
