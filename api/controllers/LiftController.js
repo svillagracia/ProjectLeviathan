@@ -6,6 +6,15 @@
  */
 
 module.exports = {
-	
+
+  mine: function(req,res){
+    Lift.find({user:req.session.user.id}).then(function(lift){
+      res.send(lift);
+    }).catch(function(err){
+      console.log('error',err);
+      res.send([]);
+    });
+  }
+
 };
 

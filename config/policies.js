@@ -27,6 +27,14 @@ module.exports.policies = {
   ***************************************************************************/
 
   // '*': true,
+  // LiftController:{
+  //   '*':true,
+  //   mine:['sessionAuth']
+  // }
+  // UserController: {
+  //   find:true,
+  //   findOne:['sessionAuth','isAdmin','ownsThisPost']
+  // }
 
   /***************************************************************************
   *                                                                          *

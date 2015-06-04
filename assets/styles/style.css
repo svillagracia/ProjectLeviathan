@@ -1,9 +1,47 @@
+body {
+  /*background: #000000;*/
+  background: url('/images/Chalkboard_black.jpg');
+  color: #FFFFFF;
+}
+
 #loader{
   position: absolute;
-  color: black;
+  color: white;
   top: 50%;
   left: 50%;
   margin: -50px 0 0 -100px;
   text-align: center;
   z-index: 10;
+}
+
+#chalkboard {
+  text-align: center;
+  font-family: 'Short Stack', cursive;
+}
+
+.modal-header {
+  padding: 15px;
+  border-bottom: 0px;
+  text-align: center;
+}
+
+.modal-content {
+  background-color: #2A2828;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 0px;
+}
+
+.form-control {
+  color: #FFF;
+  background-color: #4C4949;
+  border: 3px solid #ccc;
+  border-radius: 0px;
+}
+
+.modal-backdrop {
+  background-color: #5F5B5B;
+}
+
+.lift-lists {
+  list-style: none;
 }

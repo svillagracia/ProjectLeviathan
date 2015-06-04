@@ -8,14 +8,31 @@
 module.exports = {
 
   attributes: {
+    meetTrain: {
+      type:'string',
+      // require:true
+    },
     benchPress:{
+      type:'integer'
+    },
+    benchSuccess: {
       type:'integer'
     },
     squat:{
       type:'integer'
     },
+    squatSuccess: {
+      type:'integer'
+    },
     deadLift:{
       type:'integer'
+    },
+    deadLiftSuccess: {
+      type:'integer'
+    },
+    attemptDate: {
+      type:'date',
+      // require:true
     },
 
     ///// associations /////

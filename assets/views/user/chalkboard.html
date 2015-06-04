@@ -1,0 +1,47 @@
+<div id="chalkboard">
+  <h1>{{user.user.username}}'s Chalk Board</h1>
+
+  <div class="col-xs-12">
+    <h4>{{user.user.username}}</h4>
+    <h6>Gender: {{user.user.gender}}</h6>
+    <h6>Height: {{user.user.height}}</h6>
+    <h6>Weight: {{user.user.weight}}</h6>
+  </div>
+
+<div class="col-xs-12">
+  <button ng-click="addLifts()" class="btn btn-success btn-xs">Add All New Attempts</button>
+</div>
+
+  <div class="col-xs-4">
+    <h2>Bench</h2>
+    <ul>
+      <li class="lift-lists" ng-repeat="bench in lifts">
+        {{bench.meetTrain}}<br>
+        Weight: {{bench.benchPress}}<br>
+        {{bench.attemptDate | date:'shortDate'}}
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-xs-4">
+    <h2>Squat</h2>
+    <ul>
+      <li class="lift-lists" ng-repeat="squat in lifts">
+        {{squat.meetTrain}}<br>
+        Weight: {{squat.squat}}<br>
+        {{squat.attemptDate | date:'shortDate'}}
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-xs-4">
+    <h2>Dead Lift</h2>
+    <ul>
+      <li class="lift-lists" ng-repeat="dl in lifts">
+        {{dl.meetTrain}}<br>
+        Weight: {{dl.deadLift}}<br>
+        {{dl.attemptDate | date:'shortDate'}}
+      </li>
+    </ul>
+  </div>
+</div>

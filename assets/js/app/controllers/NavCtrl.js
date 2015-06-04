@@ -1,6 +1,12 @@
 Leviathan.controller('NavCtrl',['$scope','$modal','UserService',function($scope,$modal,UserService){
   console.log('Nav Bar is Ready');
 
+  $scope.UserService = UserService;
+
+  $scope.$watchCollection('UserService',function(){
+    $scope.currentUser = UserService.currentUser;
+  });
+
   $scope.showLogin = function() {
     $modal.open({
       templateUrl:'/views/auth/loginModal.html',
