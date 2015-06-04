@@ -17,6 +17,17 @@ module.exports = {
    * environment (see config/connections.js and config/models.js )           *
    ***************************************************************************/
 
+  connections:{
+      leviathanMongoServerProd: {
+          adapter: 'sails-mongo',
+          url: process.env.MONGOLAB_URI
+      }
+  },
+
+  models:{
+      connection: 'leviathanMongoServerProd'
+  }
+
   // models: {
   //   connection: 'someMysqlServer'
   // },
