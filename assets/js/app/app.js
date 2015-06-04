@@ -29,6 +29,14 @@ Leviathan.config(['$routeProvider','$locationProvider',function($routeProvider,$
     templateUrl:'/views/user/chalkboard.html',
     controller:'ChalkBoardCtrl'
   })
+  .when('/platform',{
+    templateUrl:'/views/user/platform.html',
+    controller:'PlatformCtrl'
+  })
+  .when('/platform/:id',{
+    templateUrl:'/views/post/show.html',
+    controller:'PostShowCtrl'
+  })
   .otherwise({
     templateUrl:'/views/404.html'
   });

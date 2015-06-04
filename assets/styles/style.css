@@ -1,5 +1,4 @@
 body {
-  /*background: #000000;*/
   background: url('/images/Chalkboard_black.jpg');
   color: #FFFFFF;
 }
@@ -13,6 +12,8 @@ body {
   text-align: center;
   z-index: 10;
 }
+
+/*Chalk Board Styling*/
 
 #chalkboard {
   text-align: center;
@@ -43,5 +44,11 @@ body {
 }
 
 .lift-lists {
+  list-style: none;
+}
+
+/*Platform Styling*/
+
+.posts-list {
   list-style: none;
 }

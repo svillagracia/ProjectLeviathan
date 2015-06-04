@@ -10,7 +10,7 @@ module.exports = {
   attributes: {
     meetTrain: {
       type:'string',
-      // require:true
+      required:true
     },
     benchPress:{
       type:'integer'
@@ -32,7 +32,7 @@ module.exports = {
     },
     attemptDate: {
       type:'date',
-      // require:true
+      required:true
     },
 
     ///// associations /////

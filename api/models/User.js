@@ -40,6 +40,14 @@ module.exports = {
       collection:'Lift',
       via:'user'
     },
+    posts:{
+      collection:'Post',
+      via:'user'
+    },
+    comments:{
+      collection:'Comment',
+      via:'user'
+    },
 
     //override built-in toJSON method and remove password
     toJSON: function(){

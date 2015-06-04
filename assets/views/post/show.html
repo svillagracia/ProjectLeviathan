@@ -1,0 +1,23 @@
+<div class="show">
+  <h1>{{information.title}}</h1>
+
+  <p>{{information.body}}</p>
+
+  <h3>Comments:</h3>
+    <div ng-if="!currentUser">Log in to post a comment.</div>
+    <form ng-show="currentUser" class="form" ng-submit="addComment()">
+      <div class="form-group">
+        <input class="form-control" type="text" ng-model="commentTitle" placeholder="Title"></input>
+        <br><br>
+        <textarea class="form-control" ng-model="commentText" placeholder="Post your comment..."></textarea>
+      </div>
+      <input type="submit" value="Add Comment" class="btn btn-primary">
+    </form>
+  <ul>
+    <li ng-repeat="comment in information.comments">
+      {{comment.title}}<br>
+      {{comment.createdAt | date: 'short'}}<br><br>
+      {{comment.body}}<br><br>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,9 @@
+<h1>The Platform</h1>
+
+<button class="btn btn-info btn-xs" ng-click="newPost()">New Post</button>
+
+<ul>
+  <li ng-repeat="post in posts" class="posts-list">
+    <a ng-href="/platform/{{post.id}}">{{post.title}}<br><br>
+  </li>
+</ul>
