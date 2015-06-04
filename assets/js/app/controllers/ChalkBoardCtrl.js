@@ -1,12 +1,19 @@
-Leviathan.controller('ChalkBoardCtrl',['$scope','$http','$modal',function($scope,$http,$modal){
+Leviathan.controller('ChalkBoardCtrl',['$scope','$http','$modal','UserService',function($scope,$http,$modal,UserService){
 
   console.log('Chalk Board Controller Loaded!');
+
+  $scope.UserService = UserService;
+
+  $scope.$watchCollection('UserService',function(){
+    $scope.currentUser = UserService.currentUser;
+  });
+
+  $scope.currentUser = UserService.currentUser;
 
   $scope.userInfo = function(){
     $http.get('/api/auth')
     .success(function(data){
       $scope.user = data;
-      console.log('User is: ',data);
     });
   };
 
@@ -14,7 +21,13 @@ Leviathan.controller('ChalkBoardCtrl',['$scope','$http','$modal',function($scope
     $http.get('/api/lift/mine')
     .success(function(data){
       $scope.lifts = data;
-      console.log('Lifts is: ',$scope.lifts);
+    });
+  };
+
+  $scope.postInfo = function(){
+    $http.get('/api/user/' + $scope.currentUser.id + '/posts')
+    .success(function(data){
+      console.log('postInfo gets: ',data);
     });
   };
 
@@ -25,6 +38,7 @@ Leviathan.controller('ChalkBoardCtrl',['$scope','$http','$modal',function($scope
     });
   };
 
+  $scope.postInfo();
   $scope.userInfo();
   $scope.userLifts();
 
