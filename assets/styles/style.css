@@ -64,10 +64,26 @@ body {
   list-style: none;
 }
 
+.lift-success {
+  color: green;
+}
+
+.lift-fail {
+  color: red;
+}
+
 /*Platform Styling*/
+
+#all-posts {
+  margin-top: 15%;
+}
 
 .posts-list {
   list-style: none;
+  border: 3px solid #FFFFFF;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-right: 12%;
 }
 
 /*show page styling*/
@@ -78,4 +94,15 @@ body {
 
 .comment-list {
   list-style: none;
+  margin-right: 12%;
+}
+
+/*weight room styling*/
+
+.weight-list {
+  list-style: none;
+  border: 3px solid #FFFFFF;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-right: 12%;
 }

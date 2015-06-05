@@ -36,6 +36,8 @@ Leviathan.controller('ChalkBoardCtrl',['$scope','$http','$modal','UserService','
     $modal.open({
       templateUrl:'/views/user/addLiftsModal.html',
       controller:'LiftsModalCtrl'
+    }).result.then(function(){
+      $scope.userLifts();
     });
   };
 
@@ -48,6 +50,8 @@ Leviathan.controller('ChalkBoardCtrl',['$scope','$http','$modal','UserService','
           return $scope.myPosts[idx];
         }
       }
+    }).result.then(function(){
+      $scope.postInfo();
     });
   };
 
@@ -60,6 +64,8 @@ Leviathan.controller('ChalkBoardCtrl',['$scope','$http','$modal','UserService','
           return $scope.currentUser;
         }
       }
+    }).result.then(function(){
+      $scope.userInfo();
     });
   };
 

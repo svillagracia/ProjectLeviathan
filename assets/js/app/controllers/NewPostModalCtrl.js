@@ -1,8 +1,7 @@
 Leviathan.controller('NewPostModalCtrl', ['$scope','$modalInstance','UserService','$resource', function($scope,$modalInstance,UserService,$resource) {
-  console.log('New Post modal controller!!');
 
   UserService.check(function(err, data){
-    console.log('check', err, data);
+    // console.log(data);
   });
 
   var currentUser = UserService.currentUser;
@@ -15,7 +14,7 @@ Leviathan.controller('NewPostModalCtrl', ['$scope','$modalInstance','UserService
     post.linkTitle = $scope.postLinkTitle;
     post.body = $scope.postBody;
     post.$save(function(){
-      console.log('New Post Saved!', post);
+      $modalInstance.close();
     });
   };
 

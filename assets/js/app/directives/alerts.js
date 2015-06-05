@@ -3,7 +3,7 @@ Leviathan.directive('alerts', function() {
   return {
     restrict:'E',
     scope:{
-      //alerts:'=?'
+      alerts:'=?'
     },
     controller:['$scope', 'AlertService', function($scope, AlertService) {
 
