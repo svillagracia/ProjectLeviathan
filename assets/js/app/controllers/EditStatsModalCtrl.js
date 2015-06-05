@@ -1,5 +1,4 @@
 Leviathan.controller('EditStatsModalCtrl', ['$scope','$modalInstance','UserService','$resource','user','User', function($scope,$modalInstance,UserService,$resource,user,User) {
-  console.log('Edit Stats modal controller!!', user);
 
   $scope.user = user;
 
@@ -10,7 +9,6 @@ Leviathan.controller('EditStatsModalCtrl', ['$scope','$modalInstance','UserServi
       weight:$scope.user.weight,
       gender:$scope.user.gender
     },function(data){
-      console.log('edited statistics: ',data);
       $modalInstance.close();
     });
   };

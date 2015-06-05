@@ -1,7 +1,5 @@
 Leviathan.controller('ChalkBoardCtrl',['$scope','$http','$modal','UserService','Post','Lift',function($scope,$http,$modal,UserService,Post,Lift){
 
-  console.log('Chalk Board Controller Loaded!');
-
   $scope.UserService = UserService;
 
   $scope.$watchCollection('UserService',function(){
@@ -21,7 +19,6 @@ Leviathan.controller('ChalkBoardCtrl',['$scope','$http','$modal','UserService','
     $http.get('/api/lift/mine')
     .success(function(data){
       $scope.lifts = data;
-      console.log('Lifts is: ', data);
     });
   };
 
@@ -72,14 +69,12 @@ Leviathan.controller('ChalkBoardCtrl',['$scope','$http','$modal','UserService','
   $scope.deleteAttempt = function(liftId){
     Lift.delete({id:liftId},function(data){
       $scope.userLifts();
-      console.log('This set was deleted. ', data);
     });
   };
 
   $scope.deletePost = function(postId){
     Post.delete({id:postId},function(data){
       $scope.postInfo();
-      console.log('This post was deleted. ', data);
     });
   };
 

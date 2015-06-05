@@ -1,5 +1,4 @@
 Leviathan.controller('PostShowCtrl',['$scope','UserService','$routeParams','PostComment','AlertService','$http','Post','$rootScope',function($scope,UserService,$routeParams,PostComment,AlertService,$http,Post,$rootScope){
-  console.log('Post Show Controller Loaded!');
 
   $scope.UserService = UserService;
 
@@ -11,7 +10,6 @@ Leviathan.controller('PostShowCtrl',['$scope','UserService','$routeParams','Post
 
   Post.get({id:$routeParams.id},function(data) {
     $rootScope.loading = false;
-    console.log(data);
     $scope.post = data;
   },function(err){
     console.log(err);
@@ -21,7 +19,6 @@ Leviathan.controller('PostShowCtrl',['$scope','UserService','$routeParams','Post
     $http.get('/api/post/'+ $routeParams.id)
     .success(function(data){
       $scope.information = data;
-      console.log(data);
     });
   };
 

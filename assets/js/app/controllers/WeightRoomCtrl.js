@@ -5,7 +5,6 @@ Leviathan.controller('WeightRoomCtrl',['$scope','$http','$rootScope',function($s
   $http.get('/api/weightroom').success(function(data){
     $scope.articles = data;
     $rootScope.loading = false;
-    console.log('$scope.articles is: ',$scope.articles);
   });
 
 }]);

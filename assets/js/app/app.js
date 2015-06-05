@@ -1,10 +1,8 @@
 var Leviathan = angular.module('Leviathan',['ngRoute','ngResource','ui.bootstrap']);
 
 Leviathan.run(['UserService','AlertService','$rootScope',function(UserService,AlertService,$rootScope){
-  console.log('Leviathan Online');
 
   UserService.check(function(err, data){
-    console.log('check', err, data);
   });
 
 }]);

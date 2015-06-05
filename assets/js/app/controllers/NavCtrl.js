@@ -1,5 +1,4 @@
 Leviathan.controller('NavCtrl',['$scope','$modal','UserService','$location',function($scope,$modal,UserService,$location){
-  console.log('Nav Bar is Ready');
 
   $scope.UserService = UserService;
 

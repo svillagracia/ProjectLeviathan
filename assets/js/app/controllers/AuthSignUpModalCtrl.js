@@ -1,5 +1,4 @@
 Leviathan.controller('AuthSignUpModalCtrl', ['$scope','$modalInstance','UserService','$resource', function($scope,$modalInstance,UserService,$resource) {
-  console.log('Sign in modal running.');
 
   $scope.login = function() {
     UserService.login($scope.email, $scope.password, function(err, data){
