@@ -22,6 +22,19 @@ body {
   z-index: 10;
 }
 
+/*Splash styling*/
+
+.splash {
+  margin-top: 30%;
+  text-align: center;
+}
+
+#logo {
+  /*border: 1px solid white;*/
+  border-radius: 100%;
+  box-shadow: 5px 5px 5px gray;
+}
+
 /*Chalk Board Styling*/
 
 #chalkboard {
@@ -70,6 +83,18 @@ body {
 
 .lift-fail {
   color: red;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+  color: #FFF;
+  background-color: rgba(255,255,255,0);
+  border-color: rgba(221, 221, 221, 0) rgba(195, 24, 24, 0) transparent;
+}
+
+.nav-tabs > li > a:hover {
+  border-color: rgba(238, 238, 238, 0) rgba(238, 238, 238, 0) rgb(221, 221, 221);
+  background-color: rgba(238, 238, 238, 0);
+  color: rgb(58, 167, 47);
 }
 
 /*Platform Styling*/

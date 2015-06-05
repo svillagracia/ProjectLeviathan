@@ -9,116 +9,116 @@
     <h6>Weight: {{user.user.weight}}</h6>
   </div>
 
-<div class="col-xs-12 add-lifts">
-  <button ng-click="addLifts()" class="btn btn-success btn-xs">Add A New Lift Attempt</button>
-</div>
+  <div class="col-xs-12 add-lifts">
+    <button ng-click="addLifts()" class="btn btn-success btn-xs">Add A New Lift Attempt</button>
+  </div>
 
-  <tabset>
-    <!-- bench press tab -->
-    <tab heading="Bench">
-      <div class="col-xs-12">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Where</th>
-              <th>Weight (lbs)</th>
-              <th>Result</th>
-              <th>Date</th>
-              <th><i class="glyphicon glyphicon-trash"></i></th>
-            </tr>
-          </thead>
-          <tbody class="chalk-table">
-            <tr ng-repeat="lift in lifts">
-              <td>{{lift.meetTrain}}</td>
-              <td>{{lift.benchPress}}</td>
-              <td ng-if="lift.benchSuccess == 1"><i class="glyphicon glyphicon-ok lift-success"></i></td>
-              <td ng-if="lift.benchSuccess == 0"><i class="glyphicon glyphicon-remove lift-fail"></i></td>
-              <td>{{lift.attemptDate | date:'shortDate'}}</td>
-              <td><a href="#" ng-click="deleteAttempt(lift.id)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </tab>
+    <tabset>
+      <!-- bench press tab -->
+      <tab heading="Bench">
+        <div class="col-xs-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Where</th>
+                <th>Weight (lbs)</th>
+                <th>Result</th>
+                <th>Date</th>
+                <th><i class="glyphicon glyphicon-trash"></i></th>
+              </tr>
+            </thead>
+            <tbody class="chalk-table">
+              <tr ng-repeat="lift in lifts">
+                <td>{{lift.meetTrain}}</td>
+                <td>{{lift.benchPress}}</td>
+                <td ng-if="lift.benchSuccess == 1"><i class="glyphicon glyphicon-ok lift-success"></i></td>
+                <td ng-if="lift.benchSuccess == 0"><i class="glyphicon glyphicon-remove lift-fail"></i></td>
+                <td>{{lift.attemptDate | date:'shortDate'}}</td>
+                <td><a href="#" ng-click="deleteAttempt(lift.id)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </tab>
 
-    <!-- squat tab -->
-    <tab heading="Squat">
-      <div class="col-xs-12">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Where</th>
-              <th>Weight (lbs)</th>
-              <th>Result</th>
-              <th>Date</th>
-              <th><i class="glyphicon glyphicon-trash"></i></th>
-            </tr>
-          </thead>
-          <tbody class="chalk-table">
-            <tr ng-repeat="lift in lifts">
-              <td>{{lift.meetTrain}}</td>
-              <td>{{lift.squat}}</td>
-              <td ng-if="lift.squatSuccess == 1"><i class="glyphicon glyphicon-ok lift-success"></i></td>
-              <td ng-if="lift.squatSuccess == 0"><i class="glyphicon glyphicon-remove lift-fail"></i></td>
-              <td>{{lift.attemptDate | date:'shortDate'}}</td>
-              <td><a href="#" ng-click="deleteAttempt(lift.id)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </tab>
+      <!-- squat tab -->
+      <tab heading="Squat">
+        <div class="col-xs-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Where</th>
+                <th>Weight (lbs)</th>
+                <th>Result</th>
+                <th>Date</th>
+                <th><i class="glyphicon glyphicon-trash"></i></th>
+              </tr>
+            </thead>
+            <tbody class="chalk-table">
+              <tr ng-repeat="lift in lifts">
+                <td>{{lift.meetTrain}}</td>
+                <td>{{lift.squat}}</td>
+                <td ng-if="lift.squatSuccess == 1"><i class="glyphicon glyphicon-ok lift-success"></i></td>
+                <td ng-if="lift.squatSuccess == 0"><i class="glyphicon glyphicon-remove lift-fail"></i></td>
+                <td>{{lift.attemptDate | date:'shortDate'}}</td>
+                <td><a href="#" ng-click="deleteAttempt(lift.id)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </tab>
 
-    <!-- dead lift tab -->
-    <tab heading="Dead">
-      <div class="col-xs-12">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Where</th>
-              <th>Weight (lbs)</th>
-              <th>Result</th>
-              <th>Date</th>
-              <th><i class="glyphicon glyphicon-trash"></i></th>
-            </tr>
-          </thead>
-          <tbody class="chalk-table">
-            <tr ng-repeat="lift in lifts">
-              <td>{{lift.meetTrain}}</td>
-              <td>{{lift.deadLift}}</td>
-              <td ng-if="lift.deadLiftSuccess == 1"><i class="glyphicon glyphicon-ok lift-success"></i></td>
-              <td ng-if="lift.deadLiftSuccess == 0"><i class="glyphicon glyphicon-remove lift-fail"></i></td>
-              <td>{{lift.attemptDate | date:'shortDate'}}</td>
-              <td><a href="#" ng-click="deleteAttempt(lift.id)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </tab>
+      <!-- dead lift tab -->
+      <tab heading="Dead">
+        <div class="col-xs-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Where</th>
+                <th>Weight (lbs)</th>
+                <th>Result</th>
+                <th>Date</th>
+                <th><i class="glyphicon glyphicon-trash"></i></th>
+              </tr>
+            </thead>
+            <tbody class="chalk-table">
+              <tr ng-repeat="lift in lifts">
+                <td>{{lift.meetTrain}}</td>
+                <td>{{lift.deadLift}}</td>
+                <td ng-if="lift.deadLiftSuccess == 1"><i class="glyphicon glyphicon-ok lift-success"></i></td>
+                <td ng-if="lift.deadLiftSuccess == 0"><i class="glyphicon glyphicon-remove lift-fail"></i></td>
+                <td>{{lift.attemptDate | date:'shortDate'}}</td>
+                <td><a href="#" ng-click="deleteAttempt(lift.id)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </tab>
 
-    <!-- posts tab -->
-    <tab heading="Posts">
-      <div class="col-xs-12">
-        <h3>Platform posts for {{user.user.username}}</h3>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Edit</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat="post in myPosts">
-              <td>
-                <a href="/platform/{{post.id}}">{{post.title}}</a>
-              </td>
-              <td><a href="#" ng-click="editPost($index)" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-pencil"></i></a></td>
-              <td><a href="#" ng-click="deletePost(post.id)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </tab>
-  </tabset>
+      <!-- posts tab -->
+      <tab heading="Posts">
+        <div class="col-xs-12">
+          <h3>Platform posts for {{user.user.username}}</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="post in myPosts">
+                <td>
+                  <a href="/platform/{{post.id}}">{{post.title}}</a>
+                </td>
+                <td><a href="#" ng-click="editPost($index)" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-pencil"></i></a></td>
+                <td><a href="#" ng-click="deletePost(post.id)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </tab>
+    </tabset>
 
 </div>

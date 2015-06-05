@@ -21,7 +21,7 @@ Leviathan.controller('ChalkBoardCtrl',['$scope','$http','$modal','UserService','
     $http.get('/api/lift/mine')
     .success(function(data){
       $scope.lifts = data;
-      console.log(data);
+      console.log('Lifts is: ', data);
     });
   };
 
