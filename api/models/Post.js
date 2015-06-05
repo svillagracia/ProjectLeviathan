@@ -18,6 +18,9 @@ module.exports = {
     link: {
       type:'url'
     },
+    linkTitle: {
+      type:'string'
+    },
 
     ///// associations /////
     user: {

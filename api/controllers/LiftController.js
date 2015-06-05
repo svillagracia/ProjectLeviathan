@@ -8,12 +8,18 @@
 module.exports = {
 
   mine: function(req,res){
-    Lift.find({user:req.session.user.id}).then(function(lift){
-      res.send(lift);
-    }).catch(function(err){
-      console.log('error',err);
+    console.log('user',req.session.user);
+    if(req.session.user){
+      Lift.find({user:req.session.user.id}).then(function(lift){
+        res.send(lift);
+      }).catch(function(err){
+        console.log('error',err);
+        res.send([]);
+      });
+    } else {
+      console.log('not logged in...');
       res.send([]);
-    });
+    }
   }
 
 };

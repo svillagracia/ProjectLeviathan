@@ -1,6 +1,8 @@
 <div class="show">
   <h1>{{information.title}}</h1>
 
+  <p><a href="{{information.link}}" target="_blank">{{information.linkTitle}}</a></p>
+
   <p>{{information.body}}</p>
 
   <h3>Comments:</h3>
@@ -13,11 +15,13 @@
       </div>
       <input type="submit" value="Add Comment" class="btn btn-primary">
     </form>
+ <div class="comments">
   <ul>
-    <li ng-repeat="comment in information.comments">
+    <li class="comment-list" ng-repeat="comment in information.comments">
       {{comment.title}}<br>
       {{comment.createdAt | date: 'short'}}<br><br>
       {{comment.body}}<br><br>
     </li>
   </ul>
+ </div>
 </div>

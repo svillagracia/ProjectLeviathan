@@ -8,7 +8,6 @@ Leviathan.controller('LiftsModalCtrl', ['$scope','$modalInstance','UserService',
   var currentUser = UserService.currentUser;
 
   var Lift = $resource('/api/user/'+ currentUser.id +'/lifts');
-  console.log(Lift);
   $scope.newAttempts = function(){
     console.log('button clicked');
     var lift = new Lift();
@@ -20,8 +19,11 @@ Leviathan.controller('LiftsModalCtrl', ['$scope','$modalInstance','UserService',
     lift.deadLift = $scope.deadLift;
     lift.deadLiftSuccess = $scope.deadLiftSuccess;
     lift.attemptDate = $scope.attemptDate;
+    console.log($scope.attemptDate);
+    console.log(lift);
     lift.$save(function(){
       console.log('New Lift Saved!', lift);
+      $modalInstance.close();
     });
   };
 

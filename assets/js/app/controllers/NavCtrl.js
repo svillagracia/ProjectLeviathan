@@ -1,4 +1,4 @@
-Leviathan.controller('NavCtrl',['$scope','$modal','UserService',function($scope,$modal,UserService){
+Leviathan.controller('NavCtrl',['$scope','$modal','UserService','$location',function($scope,$modal,UserService,$location){
   console.log('Nav Bar is Ready');
 
   $scope.UserService = UserService;
@@ -23,7 +23,7 @@ Leviathan.controller('NavCtrl',['$scope','$modal','UserService',function($scope,
 
   $scope.logout = function() {
     UserService.logout(function(err, data){
-      //doing nothing...
+      $location.path('/');
     });
   };
 

@@ -1,4 +1,4 @@
-Leviathan.controller('AuthLoginModalCtrl', ['$scope','$modalInstance','UserService','$resource', function($scope,$modalInstance,UserService,$resource) {
+Leviathan.controller('AuthLoginModalCtrl', ['$scope','$modalInstance','UserService','$resource','$location',function($scope,$modalInstance,UserService,$resource,$location) {
   console.log('login modal controller!!');
 
   $scope.login = function() {
@@ -7,6 +7,7 @@ Leviathan.controller('AuthLoginModalCtrl', ['$scope','$modalInstance','UserServi
         console.log(err);
         alert('something horrible happened.');
       }else if(data && data.result){
+        $location.path('/chalkboard');
         $modalInstance.close();
       } else {
         console.log(data);

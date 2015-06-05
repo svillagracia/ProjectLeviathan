@@ -1,4 +1,4 @@
-Leviathan.controller('ChalkBoardCtrl',['$scope','$http','$modal','UserService',function($scope,$http,$modal,UserService){
+Leviathan.controller('ChalkBoardCtrl',['$scope','$http','$modal','UserService','Post','Lift',function($scope,$http,$modal,UserService,Post,Lift){
 
   console.log('Chalk Board Controller Loaded!');
 
@@ -21,13 +21,14 @@ Leviathan.controller('ChalkBoardCtrl',['$scope','$http','$modal','UserService',f
     $http.get('/api/lift/mine')
     .success(function(data){
       $scope.lifts = data;
+      console.log(data);
     });
   };
 
   $scope.postInfo = function(){
     $http.get('/api/user/' + $scope.currentUser.id + '/posts')
     .success(function(data){
-      console.log('postInfo gets: ',data);
+      $scope.myPosts = data;
     });
   };
 
@@ -35,6 +36,44 @@ Leviathan.controller('ChalkBoardCtrl',['$scope','$http','$modal','UserService',f
     $modal.open({
       templateUrl:'/views/user/addLiftsModal.html',
       controller:'LiftsModalCtrl'
+    });
+  };
+
+  $scope.editPost = function(idx){
+    $modal.open({
+      templateUrl:'/views/user/editPostModal.html',
+      controller:'EditPostModalCtrl',
+      resolve: {
+        thisPost:function(){
+          return $scope.myPosts[idx];
+        }
+      }
+    });
+  };
+
+  $scope.editStats = function() {
+    $modal.open({
+      templateUrl:'/views/user/editStatsModal.html',
+      controller:'EditStatsModalCtrl',
+      resolve: {
+        user:function(){
+          return $scope.currentUser;
+        }
+      }
+    });
+  };
+
+  $scope.deleteAttempt = function(liftId){
+    Lift.delete({id:liftId},function(data){
+      $scope.userLifts();
+      console.log('This set was deleted. ', data);
+    });
+  };
+
+  $scope.deletePost = function(postId){
+    Post.delete({id:postId},function(data){
+      $scope.postInfo();
+      console.log('This post was deleted. ', data);
     });
   };
 

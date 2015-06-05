@@ -1,47 +1,121 @@
 <div id="chalkboard">
   <h1>{{user.user.username}}'s Chalk Board</h1>
 
-  <div class="col-xs-12">
+  <div class="col-xs-12 user-stats">
     <h4>{{user.user.username}}</h4>
+    <button ng-click="editStats()" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-pencil"></i>  Edit Statistics</button>
     <h6>Gender: {{user.user.gender}}</h6>
     <h6>Height: {{user.user.height}}</h6>
     <h6>Weight: {{user.user.weight}}</h6>
   </div>
 
-<div class="col-xs-12">
-  <button ng-click="addLifts()" class="btn btn-success btn-xs">Add All New Attempts</button>
+<div class="col-xs-12 add-lifts">
+  <button ng-click="addLifts()" class="btn btn-success btn-xs">Add A New Lift Attempt</button>
 </div>
 
-  <div class="col-xs-4">
-    <h2>Bench</h2>
-    <ul>
-      <li class="lift-lists" ng-repeat="bench in lifts">
-        {{bench.meetTrain}}<br>
-        Weight: {{bench.benchPress}}<br>
-        {{bench.attemptDate | date:'shortDate'}}
-      </li>
-    </ul>
-  </div>
+  <tabset>
+    <!-- bench press tab -->
+    <tab heading="Bench">
+      <div class="col-xs-12">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Where</th>
+              <th>Weight (lbs)</th>
+              <th>Result</th>
+              <th>Date</th>
+              <th><i class="glyphicon glyphicon-trash"></i></th>
+            </tr>
+          </thead>
+          <tbody class="chalk-table">
+            <tr ng-repeat="lift in lifts">
+              <td>{{lift.meetTrain}}</td>
+              <td>{{lift.benchPress}}</td>
+              <td>{{lift.benchSuccess}}</td>
+              <td>{{lift.attemptDate | date:'shortDate'}}</td>
+              <td><a href="#" ng-click="deleteAttempt(lift.id)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </tab>
 
-  <div class="col-xs-4">
-    <h2>Squat</h2>
-    <ul>
-      <li class="lift-lists" ng-repeat="squat in lifts">
-        {{squat.meetTrain}}<br>
-        Weight: {{squat.squat}}<br>
-        {{squat.attemptDate | date:'shortDate'}}
-      </li>
-    </ul>
-  </div>
+    <!-- squat tab -->
+    <tab heading="Squat">
+      <div class="col-xs-12">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Where</th>
+              <th>Weight (lbs)</th>
+              <th>Result</th>
+              <th>Date</th>
+              <th><i class="glyphicon glyphicon-trash"></i></th>
+            </tr>
+          </thead>
+          <tbody class="chalk-table">
+            <tr ng-repeat="lift in lifts">
+              <td>{{lift.meetTrain}}</td>
+              <td>{{lift.squat}}</td>
+              <td>{{lift.squatSuccess}}</td>
+              <td>{{lift.attemptDate | date:'shortDate'}}</td>
+              <td><a href="#" ng-click="deleteAttempt(lift.id)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </tab>
 
-  <div class="col-xs-4">
-    <h2>Dead Lift</h2>
-    <ul>
-      <li class="lift-lists" ng-repeat="dl in lifts">
-        {{dl.meetTrain}}<br>
-        Weight: {{dl.deadLift}}<br>
-        {{dl.attemptDate | date:'shortDate'}}
-      </li>
-    </ul>
-  </div>
+    <!-- dead lift tab -->
+    <tab heading="Dead">
+      <div class="col-xs-12">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Where</th>
+              <th>Weight (lbs)</th>
+              <th>Result</th>
+              <th>Date</th>
+              <th><i class="glyphicon glyphicon-trash"></i></th>
+            </tr>
+          </thead>
+          <tbody class="chalk-table">
+            <tr ng-repeat="lift in lifts">
+              <td>{{lift.meetTrain}}</td>
+              <td>{{lift.deadLift}}</td>
+              <td>{{lift.deadLiftSuccess}}</td>
+              <td>{{lift.attemptDate | date:'shortDate'}}</td>
+              <td><a href="#" ng-click="deleteAttempt(lift.id)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </tab>
+
+    <!-- posts tab -->
+    <tab heading="Posts">
+      <div class="col-xs-12">
+        <h3>Platform posts for {{user.user.username}}</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="post in myPosts">
+              <td>
+                <a href="/platform/{{post.id}}">{{post.title}}</a>
+              </td>
+              <td><a href="#" ng-click="editPost($index)" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-pencil"></i></a></td>
+              <td><a href="#" ng-click="deletePost(post.id)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </tab>
+  </tabset>
+
 </div>

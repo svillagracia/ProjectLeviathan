@@ -12,6 +12,7 @@ Leviathan.controller('NewPostModalCtrl', ['$scope','$modalInstance','UserService
     var post = new Post();
     post.title = $scope.postTitle;
     post.link = $scope.postLink;
+    post.linkTitle = $scope.postLinkTitle;
     post.body = $scope.postBody;
     post.$save(function(){
       console.log('New Post Saved!', post);

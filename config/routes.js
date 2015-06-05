@@ -39,6 +39,10 @@ module.exports.routes = {
   'delete /api/auth':'AuthController.logout',
   'post /api/auth/:id':'AuthController.register',
 
+  'put /api/post/:id':'PostController.edit',
+
+  'put /api/user/:id':'UserController.edit',
+
   'get /api/weightroom': 'WeightroomController.getArticles',
 
   "get *":{

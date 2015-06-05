@@ -1,6 +1,15 @@
 body {
   background: url('/images/Chalkboard_black.jpg');
+  background-attachment: fixed;
   color: #FFFFFF;
+}
+
+.container-fluid > .navbar-header {
+  background: #222222;
+}
+
+.navbar-inverse .navbar-collapse {
+  background: rgba(34, 34, 34, 0.99) none repeat scroll 0% 0%;
 }
 
 #loader{
@@ -18,6 +27,14 @@ body {
 #chalkboard {
   text-align: center;
   font-family: 'Short Stack', cursive;
+}
+
+.add-lifts {
+  margin-bottom: 5%;
+}
+
+.chalk-table {
+  overflow-y: auto;
 }
 
 .modal-header {
@@ -50,5 +67,15 @@ body {
 /*Platform Styling*/
 
 .posts-list {
+  list-style: none;
+}
+
+/*show page styling*/
+
+.comments {
+  margin-top: 20px;
+}
+
+.comment-list {
   list-style: none;
 }

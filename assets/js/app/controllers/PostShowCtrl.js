@@ -33,6 +33,7 @@ Leviathan.controller('PostShowCtrl',['$scope','UserService','$routeParams','Post
       $scope.post = data;
       $scope.commentTitle = '';
       $scope.commentText = '';
+      $scope.postInfo();
     });
   };
 
