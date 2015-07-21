@@ -27,5 +27,9 @@ Leviathan.controller('AuthSignUpModalCtrl', ['$scope','$modalInstance','UserServ
     });
   };
 
+  $scope.closeModal = function(){
+    $modalInstance.close();
+  };
+
 }]);
 

@@ -15,4 +15,8 @@ Leviathan.controller('AuthLoginModalCtrl', ['$scope','$modalInstance','UserServi
     });
   };
 
+  $scope.closeModal = function(){
+    $modalInstance.close();
+  };
+
 }]);

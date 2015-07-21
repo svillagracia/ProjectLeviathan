@@ -13,5 +13,8 @@ Leviathan.controller('EditStatsModalCtrl', ['$scope','$modalInstance','UserServi
     });
   };
 
+  $scope.closeModal = function(){
+    $modalInstance.close();
+  };
 
 }]);

@@ -21,4 +21,8 @@ Leviathan.controller('LiftsModalCtrl', ['$scope','$modalInstance','UserService',
     });
   };
 
+  $scope.closeModal = function(){
+    $modalInstance.close();
+  };
+
 }]);

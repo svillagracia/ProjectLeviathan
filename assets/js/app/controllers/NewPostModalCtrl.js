@@ -18,4 +18,8 @@ Leviathan.controller('NewPostModalCtrl', ['$scope','$modalInstance','UserService
     });
   };
 
+  $scope.closeModal = function(){
+    $modalInstance.close();
+  };
+
 }]);

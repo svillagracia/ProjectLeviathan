@@ -13,4 +13,8 @@ Leviathan.controller('EditPostModalCtrl', ['$scope','$modalInstance','UserServic
     });
   };
 
+  $scope.closeModal = function(){
+    $modalInstance.close();
+  };
+
 }]);
